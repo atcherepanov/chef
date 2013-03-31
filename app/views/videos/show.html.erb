@@ -30,19 +30,6 @@
     <source src="<%= @h264_encoding.url %>" type="video/mp4">
   </video>
 
-  <h3>Thumbnails</h3>
-
-  <ul class="thumbnails">
-  <% @h264_encoding.screenshots.each do |src| %>
-    <li class="span3">
-      <a class="thumbnail" href="#">
-        <img src="<%= src %>"
-             style="width: <%= @h264_encoding.width %>; height: <%= @h264_encoding.height %>">
-      </a>
-    </li>
-  <% end %>
-  </ul>
-
 <% else %>
 
 <div class='progress progress-striped progress-success'>
