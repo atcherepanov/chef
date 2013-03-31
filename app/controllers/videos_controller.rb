@@ -7,6 +7,12 @@ class VideosController < ApplicationController
     @h264_encoding = @original_video.encodings['h264']
   end
 
+  def index
+    @video = Video.last
+    @original_video = @video.panda_video
+    @h264_encoding = @original_video.encodings['h264']
+  end
+
   def simple
     @video = Video.new
     render 'simple'
