@@ -1,0 +1,16 @@
+<% content_for :navbar do %>
+    <li><a href="/simple">Simple</a></li>
+    <li><a href="/advanced">Advanced</a></li>
+    <li class="active"><a href="#">Player</a></li>
+<% end %>
+
+<h2><%= @video.title %></h2>
+
+<div class='span8'>
+      <!-- HTML5 player -->
+      <video id="movie" width="<%= @h264_encoding.width %>" height="<%= @h264_encoding.height %>" preload="none"
+             poster="<%= @h264_encoding.screenshots.first %>" controls>
+        <source src="<%= @h264_encoding.url %>" type="video/mp4">
+      </video>
+
+</div>
