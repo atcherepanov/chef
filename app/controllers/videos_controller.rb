@@ -9,6 +9,7 @@ class VideosController < ApplicationController
 
   def index
     @video = Video.last
+    @videos = Video.all
     @original_video = @video.panda_video
     @h264_encoding = @original_video.encodings['h264']
   end
