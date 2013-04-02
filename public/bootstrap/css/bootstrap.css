@@ -70,7 +70,7 @@ img {
   width: auto\9;
   height: auto;
   max-width: 100%;
-  vertical-align: middle;
+
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
@@ -5430,9 +5430,10 @@ input[type="submit"].btn.btn-mini {
 }
 
 .thumbnails {
-  margin-left: -20px;
   list-style: none;
+    display:block;
   *zoom: 1;
+    float:left;
 }
 
 .thumbnails:before,
