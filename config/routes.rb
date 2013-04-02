@@ -9,7 +9,7 @@ PandaExampleRails::Application.routes.draw do
   match "/advanced", :to => "videos#advanced"
 
   match "/videos/postprocess", :to => "videos#postprocess"
-
+  match "/index", to: "videos#index"
   root :to => "videos#index"
 
 end
