@@ -27,7 +27,7 @@
 </div>
      -->
 <ul class="thumbnails">
-  <% @videos.reverse_each do |src| %>
+  <% @videos.reverse.each do |src| %>
       <li class="span3">
         <a class="thumbnail" href="/videos/<%=src.id %>">
           <img src="<%= src.panda_video.encodings['h264'].screenshots.first %>"
