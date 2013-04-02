@@ -6038,3 +6038,7 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+.gall {
+    max-width: 700px;
+}
