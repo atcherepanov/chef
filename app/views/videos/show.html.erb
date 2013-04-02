@@ -6,24 +6,8 @@
 
 <h2><%= @video.title %></h2>
 
-<p>Here's the raw Panda information:</p>
-
-<div class='span8'>
-
-<section>
-  <h4>Video Input: </h4>
-  <pre><%= h @original_video.inspect %></pre>
-</section>
-
-<section>
-  <h4>Video Output H264:</h4>
-  <pre><%= h @h264_encoding.inspect %></pre>
-</section>
-
 <% if @h264_encoding.success? %>
-  
-  <h3>HTML5 Player</h3>
-  
+
   <!-- HTML5 player -->
   <video id="movie" width="<%= @h264_encoding.width %>" height="<%= @h264_encoding.height %>" preload="none" 
     poster="<%= @h264_encoding.screenshots.first %>" controls>
