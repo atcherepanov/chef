@@ -4,38 +4,21 @@
     <li class="active"><a href="#">Player</a></li>
 <% end %>
 
-<h2><%= @video.title %></h2>
+<p>
+  <% AWS::S3::DEFAULT_HOST.replace "s3-us-west-2.amazonaws.com"
+        @bucket = AWS::S3::Bucket.find("screamingchef")
+  %>
 
-<div class='span8'>
-      <!-- HTML5 player -->
-      <video id="movie" width="<%= @h264_encoding.width %>" height="<%= @h264_encoding.height %>" preload="none"
-             poster="<%= @h264_encoding.screenshots.first %>" controls>
-        <source src="<%= @h264_encoding.url %>" type="video/mp4">
-      </video>
-
-</div>
-<!--
-<div >
-<ul class="thumbnails">
-      <li class="span3">
-        <a class="thumbnail" href="/videos/<%=@video.id %>">
-          <img src="<%= @h264_encoding.screenshots.first %>"
-               style="width: <%= @h264_encoding.width %>; height: <%= @h264_encoding.height %>">
-        </a>
-      </li>
-</ul>
-</div>
-     -->
-<div class="gall">
-<ul class="thumbnails">
-  <% @videos.reverse.each do |src| %>
-      <li class="span3">
-        <a class="thumbnail" href="/videos/<%=src.id %>">
-          <img src="<%= src.panda_video.encodings['h264'].screenshots.first %>"
-               style="width: <%= @h264_encoding.width %>; height: <%= @h264_encoding.height %>">
-        </a>
-      </li>
+  <% @bucket.each do |pic|
+  if pic.url.index('.mov') != nil
+  %>
+  <video src="<%=pic.url %>" controls type="video/mp4">
+          </video>
   <% end %>
-</ul>
-</div>
+  <% end %>
+
+
+</p>
+
+
 

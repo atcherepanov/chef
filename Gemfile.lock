@@ -29,6 +29,10 @@ GEM
       activesupport (= 3.0.20)
     activesupport (3.0.20)
     arel (2.0.10)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -81,11 +85,13 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
+    xml-simple (1.1.2)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  aws-s3 (= 0.6.2)
   panda (~> 1.6.0)
   pg
   rails (~> 3.0.9)

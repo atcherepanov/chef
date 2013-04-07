@@ -5,6 +5,11 @@ require 'rails/all'
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
+AWS::S3::Base.establish_connection!(
+    :access_key_id     => 'AKIAJ5THE2GFHRGFJLGA',
+    :secret_access_key => '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',
+    :server => 's3-us-west-2.amazonaws.com'
+)
 
 module PandaExampleRails
   class Application < Rails::Application
