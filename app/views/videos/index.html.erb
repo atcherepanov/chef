@@ -7,15 +7,26 @@
 <p>
   <% AWS::S3::DEFAULT_HOST.replace "s3-us-west-2.amazonaws.com"
         @bucket = AWS::S3::Bucket.find("screamingchef")
+     @list = Array.new
+     vidsurl = Array.new
   %>
 
   <% @bucket.each do |pic|
-  if pic.url.index('.mov') != nil
+  if pic.url.index('.mp4') != nil
+    @list << {
+            :url2 => pic.url,
+            :time=> pic.last_modified
+    }
+  end
+
+     end
+    vidsurl = @list.sort_by{|e| e[:time]}.reverse
   %>
-  <video src="<%=pic.url %>" controls type="video/mp4">
+      <% vidsurl.each do |url| %>
+  <video src="<%=url[:url2]%>" controls type="video/mp4">
           </video>
   <% end %>
-  <% end %>
+
 
 </p>
 
